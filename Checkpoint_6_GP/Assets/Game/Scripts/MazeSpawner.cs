@@ -16,8 +16,8 @@ public class MazeSpawner : SimulationBehaviour, IPlayerJoined
             Runner.Spawn(matchPrefab, Vector3.zero, Quaternion.identity);
         }
 
-        Vector3 spawnPosition = isMaster ? new Vector3(-12, 5 -37) : new Vector3(12, 5, -37);
-        Quaternion spawnRotation = Quaternion.identity;
+        Vector3 spawnPosition = isMaster ? new Vector3(-12, 5, -37) : new Vector3(12, 5, -37);
+        Quaternion spawnRotation = Quaternion.Euler(0, 90, 0);
         NetworkObject playerObjct = Runner.Spawn(playerPrefab, spawnPosition, spawnRotation);
         Runner.SetPlayerObject(player, playerObjct);
     }
